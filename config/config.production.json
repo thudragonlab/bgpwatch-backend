@@ -1,0 +1,15 @@
+{
+  "db": [{
+    "host": "xxx",
+    "port": 20417,
+    "user": "",
+    "pwd": ""
+  },{
+    "host": "xxx",
+    "port": 10808,
+    "user": "xxxx",
+    "pwd": "Txxxx1"
+  }],
+  "resiliencePath": "/home/peizd01/for_dragon/pzd_test5",
+  "url":"https://bgpwatch.cgtf.net/#/"
+}

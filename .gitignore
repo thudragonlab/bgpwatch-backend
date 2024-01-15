@@ -1,0 +1,11 @@
+*.log
+*.txt
+*.ini
+venv
+*/.DS_Store
+static/*.json
+.idea
+/logs/*log*
+config.json
+**/__pycache__
+__*.lock

@@ -1,0 +1,456 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "BGP-backend",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "public"
+    },
+    {
+      "name": "public/Anomaly"
+    }
+  ],
+  "paths": {
+    "/get_event_by_condition": {
+      "post": {
+        "summary": "get Hijack List By Condition",
+        "x-apifox-folder": "public/Anomaly",
+        "x-apifox-status": "developing",
+        "deprecated": false,
+        "description": "",
+        "tags": [
+          "public/Anomaly"
+        ],
+        "parameters": [],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "description": "Event Type",
+                    "enum": [
+                      "Possible Hijack",
+                      "Possible SubHijack",
+                      "Ongoing Possible Hijack",
+                      "Ongoing Possible SubHijack"
+                    ],
+                    "x-apifox": {
+                      "enumDescriptions": {
+                        "Possible Hijack": "",
+                        "Possible SubHijack": "",
+                        "Ongoing Possible Hijack": "",
+                        "Ongoing Possible SubHijack": ""
+                      }
+                    },
+                    "examples": [
+                      "Ongoing Possible SubHijack"
+                    ]
+                  },
+                  "condition": {
+                    "type": "object",
+                    "properties": {
+                      "start_timestamp": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "x-apifox-orders": [],
+                            "properties": {},
+                            "x-apifox-ignore-properties": []
+                          },
+                          {
+                            "type": "integer"
+                          }
+                        ]
+                      },
+                      "hijack_as": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "x-apifox-orders": [],
+                            "properties": {},
+                            "x-apifox-ignore-properties": []
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "hijack_as_country": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "x-apifox-orders": [],
+                            "properties": {},
+                            "x-apifox-ignore-properties": []
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "level": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "x-apifox-orders": [],
+                            "properties": {},
+                            "x-apifox-ignore-properties": []
+                          },
+                          {
+                            "type": "string",
+                            "enum": [
+                              "low",
+                              "middle",
+                              "high"
+                            ],
+                            "x-apifox": {
+                              "enumDescriptions": {
+                                "low": "",
+                                "middle": "",
+                                "high": ""
+                              }
+                            }
+                          }
+                        ],
+                        "description": "Event Level"
+                      },
+                      "prefix": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "x-apifox-orders": [],
+                            "properties": {},
+                            "x-apifox-ignore-properties": []
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "subprefix": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "x-apifox-orders": [],
+                            "properties": {},
+                            "x-apifox-ignore-properties": []
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "victim_as": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "x-apifox-orders": [],
+                            "properties": {},
+                            "x-apifox-ignore-properties": []
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "victim_as_country": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "x-apifox-orders": [],
+                            "properties": {},
+                            "x-apifox-ignore-properties": []
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ]
+                      },
+                      "end_timestamp": {
+                        "anyOf": [
+                          {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "x-apifox-orders": [],
+                            "properties": {},
+                            "x-apifox-ignore-properties": []
+                          },
+                          {
+                            "type": "integer"
+                          }
+                        ]
+                      }
+                    },
+                    "x-apifox-orders": [
+                      "start_timestamp",
+                      "hijack_as",
+                      "hijack_as_country",
+                      "level",
+                      "prefix",
+                      "subprefix",
+                      "victim_as",
+                      "victim_as_country",
+                      "end_timestamp"
+                    ],
+                    "description": "Find Condition (Support mongo scripts)",
+                    "x-apifox-ignore-properties": []
+                  }
+                },
+                "required": [
+                  "type",
+                  "condition"
+                ],
+                "x-apifox-orders": [
+                  "type",
+                  "condition"
+                ],
+                "x-apifox-ignore-properties": []
+              },
+              "example": {
+                "type": "Possible Hijack",
+                "condition": {
+                  "start_timestamp": {
+                    "$gte": 1669853825
+                  },
+                  "victim_as": "205431",
+                  "hijack_as": "60721",
+                  "victim_as_country": "NO",
+                  "hijack_as_country": "TR",
+                  "level": "low",
+                  "prefix": "89.116.158.0/24",
+                  "end_timestamp": 1669854993
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {},
+                    "x-apifox-orders": [],
+                    "x-apifox-ignore-properties": []
+                  }
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Success Example",
+                    "value": [
+                      {
+                        "before_as": "3462",
+                        "before_as_country": "TW",
+                        "before_as_description": "HINET",
+                        "dict_k": "2001:b032:104::/48_2001:b032::/37",
+                        "event_id": "2001:b032:104::/48-sub1696473148",
+                        "hash_0": "-",
+                        "hijack_as": "20940",
+                        "hijack_as_country": "NL",
+                        "hijack_as_description": "AKAMAI-ASN1",
+                        "is_subhijack": true,
+                        "level": "low",
+                        "level_reason": "",
+                        "moas_set": [
+                          "20940"
+                        ],
+                        "prefix": "2001:b032::/37",
+                        "reason": "possible subhijack",
+                        "replay": {
+                          "1696473148": {
+                            "2001:b032:104::/48": [
+                              "17639 9304 9924 7481 20940",
+                              "44393 63800 945 134823 7481 20940"
+                            ],
+                            "2001:b032::/37": [
+                              "38001 3462",
+                              "34549 6939 9680 3462",
+                              "34800 6939 9680 3462",
+                              "49432 48362 3462 3462",
+                              "37721 6461 3462",
+                              "15562 2914 3356 9680 3462",
+                              "202365 6939 9680 3462",
+                              "204092 30781 3462 3462",
+                              "44393 58057 3462 3462",
+                              "58057 6939 9680 3462",
+                              "56662 6939 9680 3462",
+                              "22652 6939 9680 3462",
+                              "207564 6939 9680 3462",
+                              "50628 35280 3462",
+                              "47251 49432 48362 3462 3462",
+                              "37989 6939 9680 3462",
+                              "34927 6939 9680 3462",
+                              "44103 6939 9680 3462",
+                              "3333 1103 3462 3462",
+                              "13830 3356 9680 3462",
+                              "1403 6939 9680 3462",
+                              "14907 6939 9680 3462",
+                              "206499 50629 3462 3462",
+                              "49420 6939 9680 3462",
+                              "17639 3462",
+                              "50300 3462 3462",
+                              "50304 3462 3462",
+                              "34854 6939 9680 3462",
+                              "57381 6939 9680 3462",
+                              "20205 6939 9680 3462",
+                              "24482 3462",
+                              "61292 44356 6939 9680 3462",
+                              "57821 6939 9680 3462",
+                              "29504 6939 9680 3462",
+                              "205148 9002 3462 3462",
+                              "61218 6939 9680 3462",
+                              "852 6939 9680 3462",
+                              "7018 9680 3462",
+                              "49673 6939 9680 3462"
+                            ]
+                          },
+                          "-1": {
+                            "2001:b032:104::/48": [],
+                            "2001:b032::/37": [
+                              "38001 3462",
+                              "34549 6939 9680 3462",
+                              "34800 6939 9680 3462",
+                              "49432 48362 3462 3462",
+                              "37721 6461 3462",
+                              "15562 2914 3356 9680 3462",
+                              "202365 6939 9680 3462",
+                              "204092 30781 3462 3462",
+                              "44393 58057 3462 3462",
+                              "58057 6939 9680 3462",
+                              "56662 6939 9680 3462",
+                              "22652 6939 9680 3462",
+                              "207564 6939 9680 3462",
+                              "50628 35280 3462",
+                              "47251 49432 48362 3462 3462",
+                              "37989 6939 9680 3462",
+                              "34927 6939 9680 3462",
+                              "44103 6939 9680 3462",
+                              "3333 1103 3462 3462",
+                              "13830 3356 9680 3462",
+                              "1403 6939 9680 3462",
+                              "14907 6939 9680 3462",
+                              "206499 50629 3462 3462",
+                              "49420 6939 9680 3462",
+                              "17639 3462",
+                              "50300 3462 3462",
+                              "50304 3462 3462",
+                              "34854 6939 9680 3462",
+                              "57381 6939 9680 3462",
+                              "20205 6939 9680 3462",
+                              "24482 3462",
+                              "61292 44356 6939 9680 3462",
+                              "57821 6939 9680 3462",
+                              "29504 6939 9680 3462",
+                              "205148 9002 3462 3462",
+                              "61218 6939 9680 3462",
+                              "852 6939 9680 3462",
+                              "7018 9680 3462",
+                              "49673 6939 9680 3462"
+                            ]
+                          }
+                        },
+                        "start_datetime": "2023-10-05 02:32:28",
+                        "start_timestamp": 1696473148,
+                        "sub_pfx_as": "20940",
+                        "subprefix": "2001:b032:104::/48",
+                        "super_pfx_as": "3462",
+                        "suspicious_as": "20940",
+                        "suspicious_as_country": "NL",
+                        "suspicious_as_description": "AKAMAI-ASN1",
+                        "victim_as": "3462",
+                        "victim_as_country": "TW",
+                        "victim_as_description": "HINET",
+                        "websites_in_prefix": {
+                          "2001:b032:104::/48": [],
+                          "2001:b032::/37": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failure",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {},
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": []
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Fault example",
+                    "value": "<!doctype html>\n<html lang=en>\n<title>400 Bad Request</title>\n<h1>Bad Request</h1>\n<p>Failed to decode JSON object: Expecting property name enclosed in double quotes: line 4 column 1 (char 44)</p>\n"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Auth Failure",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "message",
+                    "status"
+                  ],
+                  "x-apifox-ignore-properties": [],
+                  "x-apifox-orders": [
+                    "message",
+                    "status"
+                  ]
+                },
+                "examples": {
+                  "1": {
+                    "summary": "Auth Failure",
+                    "value": {
+                      "message": "Invalid API key.",
+                      "status": "error"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-run-in-apifox": "https://apifox.com/web/project/1225078/apis/api-116613691-run"
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  },
+  "servers": []
+}
