@@ -4,7 +4,7 @@ from src import db_config as config
 from pymongo import MongoClient
 from flask import request
 from _datetime import datetime, timezone, timedelta
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 
 log = get_logger(APP_LOG_NAME)
 conn1 = MongoClient(host=config[1]['host'], port=config[1]['port'], username=config[1]['user'], password=config[1]['pwd'],

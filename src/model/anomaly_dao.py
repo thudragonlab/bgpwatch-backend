@@ -1,7 +1,7 @@
 from bson import ObjectId
 from datetime import datetime
 from src.model import get_collection, event_collection_map, get_daily_db, get_today_collection, get_col_from_mapping
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 from hashlib import md5
 
 log = get_logger(APP_LOG_NAME)

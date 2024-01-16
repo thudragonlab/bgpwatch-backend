@@ -6,7 +6,7 @@ from src.service.util import record_last_update_timestamp, parse_token, SALT, cr
 import base64
 import re
 
-from utils.logger import INTERVAL_LOG_NAME, get_logger
+from src.utils.logger import INTERVAL_LOG_NAME, get_logger
 
 
 @record_last_update_timestamp

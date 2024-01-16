@@ -5,7 +5,7 @@ from flask import jsonify
 
 from src import app
 from src.view.util import require_api_key
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 
 log = get_logger(APP_LOG_NAME)
 

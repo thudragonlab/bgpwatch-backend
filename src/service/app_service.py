@@ -10,7 +10,6 @@ from typing import Dict, List
 import math
 import os
 import aiohttp
-import asyncio
 import numpy
 import base64
 import requests
@@ -18,7 +17,7 @@ import requests
 from src.model import user_dao, app_dao, routing_path_dao, dashboard_dao
 from src.service.draw_rtree import draw_rtree, draw_graph_by_prefix, LinkType
 from src.service.util import parse_token, generate_supernet_regex, generate_subnet_regex, record_last_update_timestamp, get_regex_by_ip
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 
 log = get_logger(APP_LOG_NAME)
 typeMap = {

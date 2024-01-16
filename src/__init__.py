@@ -2,7 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 import json
 
-from utils.logger import init_logger
+from src.utils.logger import init_logger
 log = init_logger('app')
 
 app = Flask(__name__)

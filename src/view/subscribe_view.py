@@ -3,7 +3,7 @@ from flask import request
 import src.service.subscribe_service as subscribe_service
 from flask_httpauth import HTTPTokenAuth
 from flask import jsonify
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 from src.service.util import parse_token
 
 log = get_logger(APP_LOG_NAME)

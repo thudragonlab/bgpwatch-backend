@@ -2,7 +2,7 @@ from flask import request, jsonify
 from src.model import user_collection, user_api_collection
 from bson import ObjectId
 from datetime import datetime
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 import functools
 
 inner_log = get_logger(APP_LOG_NAME)

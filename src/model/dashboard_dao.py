@@ -1,5 +1,5 @@
 from src.model import get_daily_collection, get_collection, get_collection_by_conn1
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 log = get_logger(APP_LOG_NAME)
 conn1_db = 'routing_tree_info'
 

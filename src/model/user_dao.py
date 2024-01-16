@@ -1,6 +1,6 @@
 from src.model import *
 from bson import ObjectId
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 import base64
 
 log = get_logger(APP_LOG_NAME)

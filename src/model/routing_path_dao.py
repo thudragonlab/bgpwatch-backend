@@ -1,5 +1,5 @@
 from src.model import get_date_of_data, get_daily_collection, get_col_from_mapping
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 
 log = get_logger(APP_LOG_NAME)
 

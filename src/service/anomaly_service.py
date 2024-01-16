@@ -5,7 +5,7 @@ from datetime import datetime
 import threading
 from src.service.app_service import get_as_info_by_list_service
 from src.service.util import record_last_update_timestamp, ip_to_ipbinary
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 
 log = get_logger(APP_LOG_NAME)
 

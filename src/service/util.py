@@ -6,7 +6,6 @@ import jwt
 import requests
 from flask import request
 from src.model import last_update_timestamp_map
-from python_script.util import ip_to_binary
 
 SALT = 'dragonLab_TSU'
 

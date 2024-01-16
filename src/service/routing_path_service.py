@@ -4,7 +4,7 @@ from typing import List, Dict
 from src.service.util import generate_subnet_regex, generate_supernet_regex, record_last_update_timestamp, get_regex_by_ip
 from src.model import routing_path_dao, app_dao
 from src.service.draw_rtree import LinkType
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 
 log = get_logger(APP_LOG_NAME)
 

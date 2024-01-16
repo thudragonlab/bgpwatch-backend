@@ -1,5 +1,5 @@
 from src.model import *
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 
 log = get_logger(APP_LOG_NAME)
 PEER_DIFF = 'peer-info-specific'

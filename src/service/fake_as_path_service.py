@@ -1,8 +1,5 @@
 import src.model.fake_as_path_dao as fake_as_path_dao
-from datetime import datetime
-from src.service.app_service import get_as_info_by_list_service
 from src.service.util import record_last_update_timestamp
-from utils.logger import get_logger, APP_LOG_NAME
 
 
 @record_last_update_timestamp

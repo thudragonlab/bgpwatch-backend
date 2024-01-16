@@ -4,7 +4,7 @@ import difflib
 from src import app, config
 from src.model import user_dao, app_dao, anomaly_dao, subscribe_dao, collection_name_mapping, set_last_update_timestamp_map, get_daily_collection
 from src.service.util import parse_token, generate_supernet_regex, generate_subnet_regex, record_last_update_timestamp, get_regex_by_ip
-from utils.logger import get_logger, APP_LOG_NAME
+from src.utils.logger import get_logger, APP_LOG_NAME
 
 log = get_logger(APP_LOG_NAME)
 url = config['url']
