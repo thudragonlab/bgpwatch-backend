@@ -7,7 +7,6 @@ from src.service.util import parse_token, generate_supernet_regex, generate_subn
 from src.utils.logger import get_logger, APP_LOG_NAME
 
 log = get_logger(APP_LOG_NAME)
-url = config['url']
 
 
 @record_last_update_timestamp

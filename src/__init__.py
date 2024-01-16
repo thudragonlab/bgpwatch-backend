@@ -13,4 +13,3 @@ app.url_map.strict_slashes = False
 with open('config.json', 'r', encoding='utf-8') as config_file:
     config = json.loads(config_file.read().__str__())
     db_config = config['db']
-    url_path = config['url']

@@ -7,6 +7,3 @@ requirement:
 public_doc:
 	  npx @redocly/cli build-docs config/openapi.json -o src/templates/redoc-static.html
 
-private_doc:
-	  npx @redocly/cli build-docs config/private_openapi.json -o src/templates/private_redoc-static.html
-
