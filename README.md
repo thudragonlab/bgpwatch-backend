@@ -1,4 +1,11 @@
 # BGPWatch-backend
+Provide API access interface for BGPWatch.
+
+The BGPWatch platform has been developed by researchers and engineers from 19 countries/economies and funded by APNIC Foundation and the Chinese Government. The platform is accessible to the public at https://bgpwatch.cgtf.net.
+
+The platform supports BGP hijack detection, ensures swift response times, sends event warnings via email, assesses the severity of events, and provides event replay capabilities, which are all designed to effectively assist network operators. 
+
+Additionally, the platform has developed various tools useful for network operators to monitor the network, including a dashboard displaying the key AS information, showing forward, reverse and bi-directional routing path, and supporting subscriptions.
 
 ### Install
 ```
@@ -9,12 +16,12 @@ pip3 install -r requirements
 
 run `app.py`
 
-### Build
+### Deploy
 ```
 make build
 ```
 
-### Generate Interface Document
+### Generate Interface Documents
 ```
 make public_doc 
 ```
@@ -38,10 +45,10 @@ make public_doc
 
 ### Directory Tree
 
-- config | configuration
-- log | log file
-- static ｜ static resource
-- src ｜ source code
+- config | Configuration
+- log | Log File
+- static ｜ Static Assests
+- src ｜ Sources Code
 	- model ｜ DB Layer
 	- service ｜ Interface Business Layer
 	- view ｜ Interface Controller Layer
